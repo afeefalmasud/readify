@@ -61,7 +61,7 @@ const Footer = () => {
         </div>
         <div className="flex justify-between pt-8">
           <p>© 2024 Readify. All rights reserved.</p>
-          <ul className="flex gap-2">
+          <ul className="flex gap-2 cursor-pointer">
             <li>Privacy Policy</li>
             <li>Terms of Service</li>
           </ul>
