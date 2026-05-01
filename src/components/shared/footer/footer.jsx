@@ -9,17 +9,17 @@ import { PiBookOpenUserBold } from "react-icons/pi"
 const Footer = () => {
   return (
     <div className="bg-[#0F172A] py-20">
-      <div className="container mx-auto text-[#e4e4e4d5]">
-        <div className="flex justify-between items-center border-b-2 border-[#aeaeae57] pb-12">
+      <div className="container mx-auto text-[#e4e4e4d5] px-5 md:px-0">
+        <div className="flex flex-col md:flex-row gap-5 md:gap-0 justify-between items-center border-b-2 border-[#aeaeae57] pb-12">
           <div className="space-y-4">
-            <div className="text-[#ffffff] font-bold text-[24px] flex items-center gap-2">
+            <div className="text-[#ffffff] font-bold text-[24px] flex justify-center md:justify-start items-center gap-2">
               <PiBookOpenUserBold/>
               <h2>Readify</h2>
             </div>
-            <p>Your digital gateway to millions of stories, ideas, <br></br>
+            <p className="text-center md:text-start">Your digital gateway to millions of stories, ideas, <br></br>
             and knowledge. Join our community of readers <br></br>
             today.</p>
-            <div className="flex gap-2 cursor-pointer">
+            <div className="flex items-center justify-center md:justify-start gap-2 cursor-pointer">
               <div className="bg-[#1E2939] px-2 py-2 rounded-full">
                 <FaXTwitter className="text-[#ffffff]"/>
               </div>
@@ -40,10 +40,10 @@ const Footer = () => {
               <li>My Profile</li>
             </ul>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-4 flex flex-col items-center md:items-start">
             <h2 className="text-[#ffffff] font-bold text-[20px]">Contact Us</h2>
             <div className="space-y-3">
-              <div className="flex gap-2 items-center">
+              <div className="flex justify-center md:justify-start gap-2 items-center">
                 <HiOutlineLocationMarker />
                 <p>123 Library Way, <br></br>
                 Readington, CA 90210</p>
@@ -59,9 +59,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between pt-8">
+        <div className="flex gap-4 md:gap-0 justify-between pt-8">
           <p>© 2024 Readify. All rights reserved.</p>
-          <ul className="flex gap-2 cursor-pointer">
+          <ul className="flex flex-col md:flex-row gap-2 cursor-pointer">
             <li>Privacy Policy</li>
             <li>Terms of Service</li>
           </ul>
