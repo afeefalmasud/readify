@@ -1,5 +1,6 @@
 import Category from "@/components/categories/category";
 import Hero from "@/components/hero/hero";
+import Reason from "@/components/reason/reason";
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main>
       <Hero></Hero>
       <Category></Category>
+      <Reason></Reason>
     </main> 
   );
 }

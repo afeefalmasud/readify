@@ -6,7 +6,7 @@ import { MdLaptop } from "react-icons/md"
 const Category = () => {
   return (
     <div className="bg-[#F8FAFC]">
-      <div className="container mx-auto py-20 px-5 md:px-0">
+      <div className="container mx-auto px-5 md:px-0 py-40">
         <h1 className="text-[30px] text-[#0F172A] font-bold pb-8 text-center">Browse Categories</h1>
         <div className="flex gap-6 flex-col md:flex-row">
           <div className="p-6 border-2 border-[#bfbfbf53] rounded-2xl bg-[#ffffff]">
