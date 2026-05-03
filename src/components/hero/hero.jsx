@@ -1,6 +1,8 @@
 
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
+
 
 
 const Hero = () => {
@@ -15,7 +17,10 @@ const Hero = () => {
           <h1 className='text-[40px] md:text-[60px] font-bold text-[#0F172A] mb-6'>Find Your Next <br /> Great Read Today</h1>
           <p className='text-[18px] text-[#64748B] mb-8'>Explore thousands of books, from timeless classics to <br></br>
           modern masterpieces. Borrow easily and read anywhere.</p>
-          <button className='btn bg-[#0284C7] text-[#ffffff] rounded-md'>Browse Now</button>
+          <Link href='/books'>
+            <button className='btn bg-[#0284C7] text-[#ffffff] rounded-md'>Browse Now</button>
+          </Link>
+          
         </div>
         <div>
           <Image src='/assets/hero.png' alt='hero' width={600} height={600}/>

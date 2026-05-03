@@ -7,7 +7,7 @@ const FeaturedCard = ({book}) => {
     <div>
       <div className='bg-[#dcdcdc7c] p-4 rounded-lg w-fit mb-4'>
         <div className='relative w-50 h-70'>
-          <Image src={book.image} alt='book' fill className='rounded-lg object-cover'></Image>
+          <Image src={book.image} alt='book' fill className='rounded-lg object-cover' loading='lazy'></Image>
         </div>
       </div>
       <div className='flex justify-between mb-4 items-start'>
