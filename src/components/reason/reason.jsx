@@ -6,7 +6,7 @@ import { RiFlashlightLine } from 'react-icons/ri'
 const Reason = () => {
   return (
     <div className='bg-[#F8FAFC]'>
-      <div className='container mx-auto  px-5 md:px-0 flex flex-col md:flex-row justify-between gap-6 py-40'>
+      <div className='container mx-auto  px-5 md:px-0 flex flex-col md:flex-row justify-between gap-6 py-30'>
         <div className='space-y-6 md:w-1/2'>
           <div className='badge badge-primary badge-soft rounded-2xl px-5'>
             <p className='text-[#0284C7] font-bold'>Our Promise</p>

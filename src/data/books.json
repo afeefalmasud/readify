@@ -40,9 +40,9 @@
   },
   {
     "id": 4,
-    "bookName": "The Catcher in the Rye",
+    "bookName": "The Catcher",
     "author": "J.D. Salinger",
-    "image": "https://i.ibb.co.com/tYSWRfG/catcherrye-edited-1-800x.png",
+    "image": "/assets/catcher.png",
     "description": "The story follows Holden Caulfield, a teenager struggling with identity and adulthood. After leaving school, he wanders through New York City. He feels disconnected from the adult world. The novel captures teenage confusion and rebellion. It is a powerful coming-of-age story.",
     "totalPages": 224,
     "rating": 4.3,
@@ -75,11 +75,12 @@
     "category": "Story",
     "publisher": "Allen & Unwin",
     "yearOfPublishing": 1937,
-    "available_quantity": 8
+    "available_quantity": 8,
+    "featured": true
   },
   {
     "id": 7,
-    "bookName": "Harry Potter and the Sorcerer's Stone",
+    "bookName": "Harry Potter",
     "author": "J.K. Rowling",
     "image": "https://i.ibb.co.com/989qMRW/42844155.jpg",
     "description": "Harry discovers he is a wizard and joins Hogwarts. He learns magic, friendship, and bravery. He uncovers secrets about his past and destiny. The world of magic opens a new adventure for him. It begins a globally loved series.",
@@ -88,13 +89,14 @@
     "category": "Story",
     "publisher": "Bloomsbury",
     "yearOfPublishing": 1997,
-    "available_quantity": 10
+    "available_quantity": 10,
+    "featured": true
   },
   {
     "id": 8,
     "bookName": "The Alchemist",
     "author": "Paulo Coelho",
-    "image": "https://i.ibb.co.com/zS9jsdK/18144590.jpg",
+    "image": "/assets/alchemist.jpg",
     "description": "A shepherd named Santiago follows his dream of finding treasure. His journey teaches him about destiny and purpose. He travels across deserts and faces challenges. The story emphasizes following your heart. It is a philosophical inspirational novel.",
     "totalPages": 177,
     "rating": 4.6,
@@ -127,7 +129,8 @@
     "category": "Tech",
     "publisher": "Prentice Hall",
     "yearOfPublishing": 2008,
-    "available_quantity": 6
+    "available_quantity": 6,
+    "featured": true
   },
   {
     "id": 11,
@@ -140,7 +143,8 @@
     "category": "Science",
     "publisher": "Avery",
     "yearOfPublishing": 2018,
-    "available_quantity": 11
+    "available_quantity": 11,
+    "featured": true
   },
   {
     "id": 12,
