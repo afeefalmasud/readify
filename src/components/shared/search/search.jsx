@@ -1,4 +1,5 @@
-import {Label, SearchField} from "@heroui/react";
+'use client'
+import {SearchField} from "@heroui/react";
 
 export function Basic({setSearch,search}) {
   return (

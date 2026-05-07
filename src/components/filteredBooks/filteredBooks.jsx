@@ -1,8 +1,8 @@
 'use client'
 import { useState } from "react";
-import Card from "../card/card";
 import { Navigation } from "../shared/drawer/drawer";
 import { Basic } from "../shared/search/search";
+import Card from "../card/card";
 
 const FilteredBooks = ({books}) => {
     const [category, setCategory ] = useState('all');
