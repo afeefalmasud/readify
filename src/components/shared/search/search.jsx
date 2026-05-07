@@ -1,8 +1,8 @@
 import {Label, SearchField} from "@heroui/react";
 
-export function Basic() {
+export function Basic({setSearch,search}) {
   return (
-    <SearchField name="search">
+    <SearchField name="search" value={search} onChange={setSearch}>
       <SearchField.Group>
         <SearchField.SearchIcon />
         <SearchField.Input className="w-70" placeholder="Search books by title..." />

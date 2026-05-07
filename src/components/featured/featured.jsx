@@ -7,7 +7,7 @@ const Featured = async() => {
   const books = await getFeaturedBook();
   return (
     <div className="bg-[#F8FAFC]">
-      <div className="container mx-auto pb-30 px-5 md:px-0">
+      <div className="container mx-auto py-30 px-5 md:px-0">
         <div className="flex pb-8 justify-between items-center">
           <h1 className="text-[30px] text-[#0F172A] font-bold">Featured Books</h1>
           <Link href={'/books'} className="text-[#155DFC]" scroll={true}>See All</Link>

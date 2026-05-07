@@ -1,8 +1,10 @@
 import Link from "next/link"
 import { PiBookOpenUserBold } from "react-icons/pi"
 import Navlink from "./navlink"
+import NavUser from "./navUser"
 
 const Navbar = () => {
+  
   return (
     <div className="shadow-md backdrop-blur-md bg-white/70  py-1 top-0 sticky z-50">
       <div className="navbar  container mx-auto">
@@ -33,9 +35,8 @@ const Navbar = () => {
             <li><Navlink href='/profile'>My Profile</Navlink></li>
           </ul>
         </div>
-        <div className="navbar-end gap-4">
-          <button className="btn cursor-pointer btn-soft btn-primary">Log In</button>
-          <button className="btn cursor-pointer btn-primary">Sign Up</button>
+        <div className="navbar-end">
+          <NavUser></NavUser>
         </div>
       </div>
     </div>
