@@ -10,9 +10,9 @@ const NavUser = () => {
     <div>
       {user ? 
         <>
-          <div>
+          <div className="flex gap-4 items-center font-medium text-[#0F172A]">
             <h2>Welcome, {user.name} </h2>
-            <button onClick={() => signOut()}>Sign Out</button>
+            <button className="btn cursor-pointer btn-soft btn-error" onClick={() => signOut()}>Sign Out</button>
           </div>
         </> :
         <>

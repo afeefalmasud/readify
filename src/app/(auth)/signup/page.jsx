@@ -2,7 +2,10 @@
 import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FaGoogle } from "react-icons/fa";
+import { PiBookOpenUserBold } from "react-icons/pi";
 
 
 const signUpPage = () => {
@@ -27,81 +30,107 @@ const signUpPage = () => {
     }
   };
 
+  const handleGoogle = async() => {
+      const data = await authClient.signIn.social({
+      provider: "google",
+    });
+  }
+
   return (
-    <div className="container mx-auto py-30 flex flex-col justify-center items-center">
-      <Form className="flex w-96 flex-col gap-4" onSubmit={onSubmit}>
-
-        {/* name */}
-
-        <TextField
-            isRequired
-            name="name"
-            validate={(value) => {
-              if (value.length < 3) {
-                return "Name must be at least 3 characters";
-              }
-              return null;
-            }}
-          >
-            <Label>Name</Label>
-            <Input placeholder="John Doe" />
-            <FieldError />
-        </TextField>
-
-        {/* email */}
-
-        <TextField
-          isRequired
-          name="email"
-          type="email"
-          validate={(value) => {
-            if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
-              return "Please enter a valid email address";
-            }
-            return null;
-          }}
-        >
-          <Label>Email</Label>
-          <Input placeholder="john@example.com" />
-          <FieldError />
-        </TextField>
-
-        {/* password */}
-
-        <TextField
-          isRequired
-          minLength={8}
-          name="password"
-          type="password"
-          validate={(value) => {
-            if (value.length < 8) {
-              return "Password must be at least 8 characters";
-            }
-            if (!/[A-Z]/.test(value)) {
-              return "Password must contain at least one uppercase letter";
-            }
-            if (!/[0-9]/.test(value)) {
-              return "Password must contain at least one number";
-            }
-            return null;
-          }}
-        >
-          <Label>Password</Label>
-          <Input placeholder="Enter your password" />
-          <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
-          <FieldError />
-        </TextField>
-
-        <div className="flex gap-2">
-          <Button type="submit">
-            <Check />
-            Submit
-          </Button>
-          <Button type="reset" variant="secondary">
-            Reset
-          </Button>
+    <div className="bg-[#F8FAFC]">
+      <div className="container mx-auto flex flex-col justify-center items-center min-h-screen ">
+        <div>
+            <div className="text-[#0284C7] font-bold text-[40px] flex items-center gap-2 pb-6">
+              <PiBookOpenUserBold/>
+              <h2>Readify</h2>
+            </div>
         </div>
-      </Form>
+        <div className="bg-[#ffffff] p-8 rounded-2xl border-2 border-[#bfbfbf53] shadow-lg mx-5 md:mx-0">
+          <h2 className=" text-[24px] font-bold text-[#0F172A] mt-4 mb-8 text-center">Create An Account</h2>
+          <Form className="flex w-full max-w-96 flex-col gap-4" onSubmit={onSubmit}>
+
+            {/* name */}
+
+            <TextField
+                isRequired
+                name="name"
+                validate={(value) => {
+                  if (value.length < 3) {
+                    return "Name must be at least 3 characters";
+                  }
+                  return null;
+                }}
+              >
+                <Label>Name</Label>
+                <Input placeholder="John Doe" />
+                <FieldError />
+            </TextField>
+
+            {/* email */}
+
+            <TextField
+              isRequired
+              name="email"
+              type="email"
+              validate={(value) => {
+                if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+                  return "Please enter a valid email address";
+                }
+                return null;
+              }}
+            >
+              <Label>Email</Label>
+              <Input placeholder="john@example.com" />
+              <FieldError />
+            </TextField>
+
+            {/* password */}
+
+            <TextField
+              isRequired
+              minLength={8}
+              name="password"
+              type="password"
+              validate={(value) => {
+                if (value.length < 8) {
+                  return "Password must be at least 8 characters";
+                }
+                if (!/[A-Z]/.test(value)) {
+                  return "Password must contain at least one uppercase letter";
+                }
+                if (!/[0-9]/.test(value)) {
+                  return "Password must contain at least one number";
+                }
+                return null;
+              }}
+            >
+              <Label>Password</Label>
+              <Input placeholder="Enter your password" />
+              <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
+              <FieldError />
+            </TextField>
+
+            <div className="flex gap-2 pt-4">
+              <Button type="submit" className="w-full bg-[#0284C7] text-[#ffffff]">
+                Sign Up
+              </Button>
+            </div>
+            <div> 
+              <p className="text-center pb-4 text-[#64748B]">Or</p>
+              <div>
+                <button onClick={handleGoogle} className="flex gap-2 items-center bg-[#ffffff] text-[#3C4043] shadow-lg py-2 rounded-full w-full justify-center border border-[#DADCE0] text-[14px] font-medium cursor-pointer">
+                  <FaGoogle />
+                  Continue With Google
+                </button>
+              </div>
+            </div>
+          </Form>
+          <div className="flex gap-2 justify-center pt-6 text-[#64748B] font-medium">
+            <p>Already have an account</p>
+            <Link href='/signin' className="text-[#0284C7]">Sign In</Link>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
