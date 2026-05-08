@@ -6,10 +6,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
 import { PiBookOpenUserBold } from "react-icons/pi";
-
+import { Bounce, toast, ToastContainer } from "react-toastify";
 
 const signUpPage = () => {
-  const router = useRouter()
+  const router = useRouter();
   const onSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -20,13 +20,33 @@ const signUpPage = () => {
       email: userData.email,
       password: userData.password,
     });
-
     if (error) {
-      console.error("Signup error:", error);
-
+      toast.error('Sign up failed', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+      });
     } else {
-      console.log("Signup success:", data);
-      router.push("/auth/signIn"); 
+      toast.success('Account created successfully', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          onClose: () => {
+            router.push("/signin");
+          },
+          transition: Bounce,
+      });
     }
   };
 
@@ -131,6 +151,7 @@ const signUpPage = () => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   )
 }

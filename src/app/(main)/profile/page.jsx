@@ -1,4 +1,8 @@
 
+export const metadata = {
+  title: "Readify | Profile",
+  description: "my profile page",
+};
 
 const profilePage = () => {
   return (

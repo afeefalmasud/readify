@@ -1,16 +1,26 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigation } from "../shared/drawer/drawer";
 import { Basic } from "../shared/search/search";
 import Card from "../card/card";
+import { useSearchParams } from "next/navigation";
 
 const FilteredBooks = ({books}) => {
-    const [category, setCategory ] = useState('all');
-    const [search,setSearch] = useState('');
+    const searchParams = useSearchParams();
+
+    const initialCategory = searchParams.get("category") || "all";
+
+    const [category, setCategory] = useState(initialCategory);
+    const [search, setSearch] = useState('');
+
+    useEffect(() => {
+        const urlCategory = searchParams.get("category") || "all";
+        setCategory(urlCategory);
+    }, [searchParams]);
+
     const filteredBooks = books.filter(book => {
       const categoryBooks = category === 'all' || book.category.toLowerCase() === category.toLowerCase();
       const searchBooks = search === '' || book.bookName.toLowerCase().includes(search.toLowerCase());
-
       return categoryBooks && searchBooks;
     })    
   return (

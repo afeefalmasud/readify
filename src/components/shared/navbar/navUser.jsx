@@ -5,12 +5,14 @@ import Link from "next/link"
 const NavUser = () => {
   const {data, isPending} = useSession()
   const user = data?.user;
-
+  if(isPending){
+    return <span className="loading loading-ring loading-lg"></span>
+  }
   return (
     <div>
       {user ? 
         <>
-          <div className="flex gap-4 items-center font-medium text-[#0F172A]">
+          <div className="flex gap-4 items-center font-bold text-[#0F172A]">
             <h2>Welcome, {user.name} </h2>
             <button className="btn cursor-pointer btn-soft btn-error" onClick={() => signOut()}>Sign Out</button>
           </div>

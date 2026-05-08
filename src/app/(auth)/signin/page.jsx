@@ -3,10 +3,14 @@ import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
 import { PiBookOpenUserBold } from "react-icons/pi";
+import { Bounce, toast, ToastContainer } from "react-toastify";
+
 
 const signInPage = () => {
+  const router = useRouter()
   const onSubmit = async(e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -16,13 +20,34 @@ const signInPage = () => {
       name: userData.name, // required
       email: userData.email, // required
       password: userData.password, // required
-      // image: "https://example.com/image.png",
-      callbackURL: "/"
     });
     if (error) {
-      console.log("Signin error:", error);
+      toast.error('Invalid email or password', {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Bounce,
+      });
     } else {
-      console.log("Signin success:", data);
+      toast.success('Welcome back', {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          onClose: () => {
+            router.push("/");
+          },
+          transition: Bounce,
+      });
     }
   };
 
@@ -31,7 +56,6 @@ const signInPage = () => {
       provider: "google",
     });
   }
-
   return (
     <div className="bg-[#F8FAFC]">
       <div className="container mx-auto flex flex-col justify-center items-center min-h-screen">
@@ -110,7 +134,9 @@ const signInPage = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
+    
   )
 }
 

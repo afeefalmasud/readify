@@ -1,3 +1,4 @@
+import Button from "@/components/borrowButton/button";
 import getBooks from "@/lib/getBooks";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,7 +6,15 @@ import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaHandshake, FaRegHandshake, FaRegStar } from "react-icons/fa6";
 import { IoArrowBackCircleOutline } from "react-icons/io5";
 
+
+export const metadata = {
+  title: "Readify | Details",
+  description: "book details page",
+};
+
 const detailsPage = async({params}) => {
+  
+
   const {id} = await params;
   const books = await getBooks();
   const book = books.find(b => b.id.toString() === id)
@@ -22,10 +31,10 @@ const detailsPage = async({params}) => {
           <div className='relative w-80 h-120 mb-6'>
             <Image src={book.image} alt='book' fill className='rounded-lg object-cover' loading='lazy'></Image>
           </div>
-          <button className='btn bg-[#0284C7] text-[#ffffff] w-full mt-auto active:scale-95 transition-transform duration-150 flex items-center gap-2 rounded-lg'>
-            <FaHandshake />
-            <p>Borrow Digital Copy</p>
-          </button>
+          <div>
+            <Button></Button>
+          </div>
+        
         </div>
         <div>
           <div className="border-b-2 border-[#bfbfbf53] pb-8">

@@ -1,6 +1,11 @@
 import FilteredBooks from "@/components/filteredBooks/filteredBooks";
 import getBooks from "@/lib/getBooks"
 
+export const metadata = {
+  title: "Readify | Books",
+  description: "all books page",
+};
+
 const booksPage = async() => {
   const books = await getBooks();
   return (
