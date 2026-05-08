@@ -1,3 +1,4 @@
+import ProfileCard from "@/components/profileCard/profileCard";
 
 export const metadata = {
   title: "Readify | Profile",
@@ -6,7 +7,12 @@ export const metadata = {
 
 const profilePage = () => {
   return (
-    <div>profilePage</div>
+    <div className="bg-[#F8FAFC]">
+      <div className="container mx-auto min-h-screen flex items-center justify-center">
+        <ProfileCard></ProfileCard>
+      </div>
+    </div>
+    
   )
 }
 

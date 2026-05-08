@@ -7,7 +7,7 @@ const Navbar = () => {
   
   return (
     <div className="shadow-md backdrop-blur-md bg-white/70  py-1 top-0 sticky z-50">
-      <div className="navbar  container mx-auto">
+      <div className="navbar  container mx-auto flex flex-col md:flex-row gap-2 md:gap-0">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

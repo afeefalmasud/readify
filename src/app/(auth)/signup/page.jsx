@@ -19,6 +19,7 @@ const signUpPage = () => {
       name: userData.name,
       email: userData.email,
       password: userData.password,
+      image: userData.image,
     });
     if (error) {
       toast.error('Sign up failed', {
@@ -127,6 +128,18 @@ const signUpPage = () => {
               <Label>Password</Label>
               <Input placeholder="Enter your password" />
               <Description>Must be at least 8 characters with 1 uppercase and 1 number</Description>
+              <FieldError />
+            </TextField>
+
+            {/* image */}
+
+            <TextField
+              isRequired
+              name="image"
+              type="text"
+            >
+              <Label>Image</Label>
+              <Input placeholder="Image URL" />
               <FieldError />
             </TextField>
 
