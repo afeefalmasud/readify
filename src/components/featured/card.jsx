@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { FaRegStar } from 'react-icons/fa6'
 import { PiBookOpenUserBold } from 'react-icons/pi'
+import FeaturedModal from './featuredModal'
 
 const FeaturedCard = ({book}) => {
   return (
@@ -20,10 +21,7 @@ const FeaturedCard = ({book}) => {
           <p>{book.rating}</p>
         </div>
       </div>
-      <button className='btn btn-soft btn-primary w-full mt-auto text-[#155DFC] hover:text-[#ececec] flex items-center gap-2'>
-        <PiBookOpenUserBold/>
-        <p>Borrow Book</p>
-      </button>
+      <FeaturedModal book={book}></FeaturedModal>
     </div>
   )
 }
