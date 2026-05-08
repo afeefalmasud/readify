@@ -3,14 +3,16 @@ import { authClient } from "@/lib/auth-client";
 import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { FaGoogle } from "react-icons/fa";
 import { PiBookOpenUserBold } from "react-icons/pi";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 
 
 const signInPage = () => {
-  const router = useRouter()
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl")
   const onSubmit = async(e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -24,7 +26,7 @@ const signInPage = () => {
     if (error) {
       toast.error('Invalid email or password', {
           position: "top-center",
-          autoClose: 5000,
+          autoClose: 1500,
           hideProgressBar: false,
           closeOnClick: false,
           pauseOnHover: true,
@@ -36,7 +38,7 @@ const signInPage = () => {
     } else {
       toast.success('Welcome back', {
           position: "top-center",
-          autoClose: 2000,
+          autoClose: 1500,
           hideProgressBar: false,
           closeOnClick: false,
           pauseOnHover: true,
@@ -44,7 +46,7 @@ const signInPage = () => {
           progress: undefined,
           theme: "light",
           onClose: () => {
-            router.push("/");
+            router.push(callbackUrl || "/");
           },
           transition: Bounce,
       });

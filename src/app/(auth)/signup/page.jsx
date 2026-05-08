@@ -23,7 +23,7 @@ const signUpPage = () => {
     if (error) {
       toast.error('Sign up failed', {
           position: "top-center",
-          autoClose: 5000,
+          autoClose: 1500,
           hideProgressBar: false,
           closeOnClick: false,
           pauseOnHover: true,
@@ -35,7 +35,7 @@ const signUpPage = () => {
     } else {
       toast.success('Account created successfully', {
           position: "top-center",
-          autoClose: 2000,
+          autoClose: 1500,
           hideProgressBar: false,
           closeOnClick: false,
           pauseOnHover: true,
