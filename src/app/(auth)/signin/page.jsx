@@ -4,6 +4,7 @@ import {Check} from "@gravity-ui/icons";
 import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { PiBookOpenUserBold } from "react-icons/pi";
 import { Bounce, toast, ToastContainer } from "react-toastify";

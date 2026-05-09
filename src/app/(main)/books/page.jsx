@@ -1,5 +1,6 @@
 import FilteredBooks from "@/components/filteredBooks/filteredBooks";
 import getBooks from "@/lib/getBooks"
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Readify | Books",
