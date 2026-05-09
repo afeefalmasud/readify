@@ -4,6 +4,7 @@ import Navbar from "@/components/shared/navbar/navbar";
 import Footer from "@/components/shared/footer/footer";
 import ScrollToTop from "@/components/shared/scroll/scroll";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

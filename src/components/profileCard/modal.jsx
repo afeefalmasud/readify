@@ -42,9 +42,6 @@ export function UpdateProfile() {
                     <Input placeholder="Image URL" />
                   </TextField>
                     <div className="flex justify-end gap-2 mt-4">
-                        <Button variant="secondary">
-                            Cancel
-                        </Button>
                         <Button type="submit">
                             Update
                         </Button>

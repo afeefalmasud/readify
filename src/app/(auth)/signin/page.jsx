@@ -9,7 +9,7 @@ import { PiBookOpenUserBold } from "react-icons/pi";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 
 
-const signInPage = () => {
+const SignInForm = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl")
@@ -19,7 +19,6 @@ const signInPage = () => {
     const userData = Object.fromEntries(formData.entries());
 
     const { data, error } = await authClient.signIn.email({
-      name: userData.name, // required
       email: userData.email, // required
       password: userData.password, // required
     });
@@ -141,5 +140,10 @@ const signInPage = () => {
     
   )
 }
-
-export default signInPage
+export default function SignInPage() {
+  return (
+    <Suspense fallback={<div><span className="loading loading-spinner loading-xl"></span></div>}>
+      <SignInForm />
+    </Suspense>
+  );
+}

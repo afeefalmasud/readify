@@ -1,15 +1,13 @@
-
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-
-
+import 'animate.css';
 
 const Hero = () => {
   return (
     <div className='bg-[#F8FAFC]'>
-      <div className='container mx-auto flex flex-col-reverse md:flex-row px-5 md:px-0 gap-5 md:gap-0 justify-between items-center min-h-screen py-30'>
-        <div className='mb-6'>
+      <div className='container min-h-screen mx-auto flex flex-col-reverse md:flex-row px-5 md:px-0 gap-5 md:gap-0 justify-between items-center py-30'>
+        <div className='mb-6 animate__animated animate__fadeInLeftBig'>
           <div className='badge badge-primary badge-soft rounded-2xl px-5'>
             <div className='p-1 rounded-full bg-[#0284C7]'></div>
             <p className='text-[#0284C7]'>New Books Every Week</p>
@@ -22,7 +20,7 @@ const Hero = () => {
           </Link>
           
         </div>
-        <div>
+        <div className='animate__animated animate__fadeInRightBig'>
           <Image src='/assets/hero.png' alt='hero' width={600} height={600}/>
         </div>
       </div>
