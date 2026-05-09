@@ -12,7 +12,7 @@ const booksPage = async() => {
   return (
     <div className="min-h-screen py-20 px-5 md:px-0 bg-[#F8FAFC]">
       <div className="container mx-auto">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div><span className="loading loading-spinner loading-xl"></span></div>}>
           <FilteredBooks books={books}></FilteredBooks>
         </Suspense>
         
