@@ -1,3 +1,6 @@
+import dns from 'node:dns/promises'
+dns.setServers(['8.8.8.8','4.4.8.8'])
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
 import Navbar from "@/components/shared/navbar/navbar";
